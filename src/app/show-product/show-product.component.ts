@@ -12,13 +12,13 @@ import { ProductService } from '../services/productService/product.service';
 export class ShowProductComponent implements OnInit{
   products:Product[]=[];
   displayedColumns:string[]=['id','name','price','description','category_id','image_url']
-  constructor(private _http:HttpClient){}
+  constructor(private productService: ProductService){}
   ngOnInit(): void {
-    this._http.get<Product[]>(" http://localhost:9090/products")
+    this.productService.get()
   .subscribe(
     response=>{
-      //alert("2");
       this.products=response;
+      // this._router.navigateByUrl('/product');
     },
     error=>{
       alert('error occurred');
@@ -27,16 +27,60 @@ export class ShowProductComponent implements OnInit{
   //alert("3");
 }
 
+getProductById(index:number){
+  let product=this.products[index]
+  this.productService.getByID(index)
+    .subscribe(
+      response =>{
+      this.products=response;
+      },
+      error=>{
+        alert('error occurred');
+      }
+    );
+}
+
+add(){
+    let product=new Product();
+    this.productService.post(product)
+      .subscribe(
+        response =>{
+          this.products.push(product)
+          alert("added ")
+        },
+        error=>{
+          alert('error occurred');
+        }
+      );
+}
+
+
+update(){
+  let product=new Product();
+  this.productService.put(product)
+    .subscribe(
+      response =>{
+        this.products.push(product)
+        alert("updated")
+      },
+      error=>{
+        alert('error occurred');
+      }
+    );
+}
+
+delete(index:number){
+  let product=this.products[index];
+  this.productService.deleteById(index)
+    .subscribe(
+      response=>{
+        this.products.splice(index,1);
+      }
+    );
+}
+
   }
 
-//   public getAll():Observable<Product[]>{
-// return this.productService.getAllProducts.subscribe=>(
 
-//   (resp:Product[])=>{
-//     console.log(resp);
-//     this.products=resp;
-//   }
-// )
-//   }
 
 
