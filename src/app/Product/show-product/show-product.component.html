@@ -1,0 +1,182 @@
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--  <a class="navbar-brand" routerLink="/home">Products</a>-->
+<!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--    <span class="navbar-toggler-icon"> </span>-->
+<!--  </button>-->
+<!--  <div class="collapse navbar-collapse" id="navbarNavDropdown">-->
+<!--    <ul class="navbar-nav">-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" routerLink="/admin">Add Product </a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</nav>-->
+<!--<div class="container" >-->
+<!--    <div class="card" style="width: 85rem;">-->
+<!--        <div class="card-header">-->
+<!--       Product-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <table class="table table-striped">-->
+<!--                <thead>-->
+<!--                    <tr >-->
+<!--                        <th scope="col">ID</th>-->
+<!--                        <th scope="col">Name</th>-->
+<!--                        <th scope="col">Price</th>-->
+<!--                        <th scope="col">Description</th>-->
+<!--                        <th scope="col">category_id</th>-->
+<!--                        <th scope="col">image_url</th>-->
+<!--                      </tr>-->
+<!--                  <tr *ngFor="let item of products;let currentIndex=index">-->
+<!--                    <th scope="col">{{item.id}}</th>-->
+<!--                    <th scope="col">{{item.name}}</th>-->
+<!--                    <th scope="col">{{item.price}}</th>-->
+<!--                    <th scope="col">{{item.description}}</th>-->
+<!--                    <th scope="col">{{item.category_id}}</th>-->
+<!--                    &lt;!&ndash; <th scope="col"><img src="{{item.image_url}}" style="width: 10%;"></th> &ndash;&gt;-->
+<!--                    <th scope="col"><button type="button" class="btn btn-primary"  >Edit</button></th>-->
+<!--                    <th scope="col"> <button type="button" class="btn btn-danger" >Delete</button></th>-->
+<!--                  </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                  <tr >-->
+<!--                    <th scope="row"></th>-->
+<!--                    <td>-->
+
+<!--                      </td>-->
+
+<!--                </tbody>-->
+<!--              </table>-->
+<!--        </div>-->
+
+<!--      </div>-->
+
+<!--</div>-->
+
+<!--<form >-->
+<!--  <div class="row" >-->
+<!--    <div class="col-md-4 col-sm-12">-->
+<!--      <label for="">Name</label>-->
+<!--      <input type="text" class="form-control" placeholder="title">-->
+<!--    </div>-->
+<!--    <div class="col-md-4 col-sm-12">-->
+<!--      <label for="">Price</label>-->
+<!--      <input type="number" class="form-control" placeholder="price">-->
+<!--    </div>-->
+
+<!--    <div class="col-md-4 col-sm-12">-->
+<!--      <select class="form-select" aria-label="Default select example">-->
+<!--&lt;!&ndash;        <option selected>Open this select menu</option>&ndash;&gt;-->
+<!--        <option value="1">WOMEN</option>-->
+<!--        <option value="2">MEN</option>-->
+<!--        <option value="3">KIDS</option>-->
+<!--      </select>-->
+<!--&lt;!&ndash;      <app-select [data]="categories" [title] =" 'Categories" (selectedvalue)="getSelected Category($event)" ></app-selec>&ndash;&gt;-->
+<!--&lt;!&ndash;       <app-select></app-selec>&ndash;&gt;-->
+<!--    </div>-->
+<!--    <div class="col-md-4 col-sm-12">-->
+<!--      <label for="image">Image</label>-->
+<!--      <img src="((base64))" alt="">-->
+<!--      <input type="file" class="form-control" (change)="getImagePath($event)">-->
+<!--    </div>-->
+<!--    <div class="col-md-8 col-sm-12">-->
+<!--      <label for="image">Description</label>-->
+<!--      <textarea class="form-control" placeholder="type here .. "></textarea>-->
+<!--    </div>-->
+
+<!--    <div class="d-flex justify-content-end mt-3">-->
+<!--      <button class="btn btn-success" >Add Product</button>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--</form>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Bootstrap CRUD Data Table for Database with Modal Form</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Manage <b>Products</b></h2>
+          </div>
+          <div class="col-sm-6">
+            <a routerLink="/addProduct"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
+<!--            <a routerLink="/deleteProduct" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>-->
+
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+          </th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of products;let currentIndex=index">
+          <td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox1" name="options[]" value="1">
+								<label for="checkbox1"></label>
+							</span>
+          </td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.description}}</td>
+<!--          <td>{{item.category_id}}</td>-->
+<!--          <td><img src="{{item.image_url}}"></td>-->
+
+          <td> <button  (change)="update(item)" class="btn btn-warning" >Update</button> </td>
+          <td>
+            <button type="button" (click)="delete(currentIndex)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="clearfix">
+        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+        <ul class="pagination">
+          <li class="page-item disabled"><a href="#">Previous</a></li>
+          <li class="page-item"><a href="#" class="page-link">1</a></li>
+          <li class="page-item"><a href="#" class="page-link">2</a></li>
+          <li class="page-item active"><a href="#" class="page-link">3</a></li>
+          <li class="page-item"><a href="#" class="page-link">4</a></li>
+          <li class="page-item"><a href="#" class="page-link">5</a></li>
+          <li class="page-item"><a href="#" class="page-link">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

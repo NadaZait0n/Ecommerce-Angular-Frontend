@@ -9,7 +9,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
-import { ShowProductComponent } from './show-product/show-product.component';
+import { ShowProductComponent } from './Product/show-product/show-product.component';
+import {AddProductComponent} from "./Product/add-product/add-product.component";
+import {EditProductComponent} from "./Product/edit-product/edit-product.component";
 
 const routes: Routes = [
 
@@ -22,6 +24,9 @@ const routes: Routes = [
   {path:'contact',component:ContactUsComponent},
   {path:'product',component:ShowProductComponent},
   {path:'cart',component:CartComponent},
+  {path:'addProduct',component:AddProductComponent},
+  {path:'editProduct/:id',component:EditProductComponent},
+
   {path:'',component:HomeComponent},
   {path:'**',component:NotFoundComponent}
 ];

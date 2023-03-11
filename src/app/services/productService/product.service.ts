@@ -19,20 +19,20 @@ export class ProductService {
    }
 
   getByID(id : number){
-    return this.httpClient.get<Product[]>(`${environment.apiURL}`+id)
+    return this.httpClient.get<Product[]>(`${environment.apiURL}/`+id)
   }
 
 
-  post(product : Product){
-    return this.httpClient.post<Product[]>(`${environment.apiURL}`,product)
+  post(model:any){
+    return this.httpClient.post(`${environment.apiURL}`,model)
   }
 
   put(product : Product){
-    return this.httpClient.put<Product[]>(`${environment.apiURL}`,product)
+    return this.httpClient.put(`${environment.apiURL}`,product)
   }
 
    deleteById( id:number){
-     return this.httpClient.delete<Product[]>(`${environment.apiURL}`+id)
+     return this.httpClient.delete(`${environment.apiURL}/`+id)
   }
 
 

@@ -12,10 +12,13 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ProductService } from './services/productService/product.service';
-import { ShowProductComponent } from './show-product/show-product.component';
+import { ShowProductComponent } from './Product/show-product/show-product.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { AddProductComponent } from './Product/add-product/add-product.component';
+import { EditProductComponent } from './Product/edit-product/edit-product.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -34,13 +37,15 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
     AboutUsComponent,
     ContactUsComponent,
     CartComponent,
+    AddProductComponent,
+    EditProductComponent,
 
-  
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,ReactiveFormsModule,
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
