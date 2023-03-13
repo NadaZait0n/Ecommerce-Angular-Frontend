@@ -17,6 +17,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { MenComponent } from './pages/category/men/men.component';
+import { WomenComponent } from './pages/category/women/women.component';
 
 
 
@@ -35,6 +37,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     AboutUsComponent,
     ContactUsComponent,
     CartComponent,
+    MenComponent,
+    WomenComponent,
   ],
   imports: [
     BrowserModule,

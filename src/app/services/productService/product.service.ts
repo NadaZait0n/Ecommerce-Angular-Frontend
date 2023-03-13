@@ -35,6 +35,11 @@ export class ProductService {
      return this.httpClient.delete(`${environment.apiURL}/`+id)
   }
 
+getByCategoryWomen(){
+    return this.httpClient.get<Product[]>(`${environment.apiURL}/categoryWomen`)
+}
 
-
+  getByCategoryMen(){
+    return this.httpClient.get<Product[]>(`${environment.apiURL}/categoryMen`)
+  }
 }
