@@ -12,10 +12,12 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { ShowProductComponent } from './Product/show-product/show-product.component';
 import {MenComponent} from "./pages/category/men/men.component";
 import {WomenComponent} from "./pages/category/women/women.component";
+import {CheckoutComponent} from "./pages/checkout/checkout.component";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
-
+  {path:'checkout',component:CheckoutComponent},
   {path:'home',component:HomeComponent},
   {path:'admin',component:AdminComponent},
   {path:'login',component:LoginComponent},
@@ -32,7 +34,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+  ReactiveFormsModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

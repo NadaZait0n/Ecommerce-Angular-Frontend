@@ -19,6 +19,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { MenComponent } from './pages/category/men/men.component';
 import { WomenComponent } from './pages/category/women/women.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 
 
@@ -39,6 +40,7 @@ import { WomenComponent } from './pages/category/women/women.component';
     CartComponent,
     MenComponent,
     WomenComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
