@@ -10,6 +10,7 @@ import {ProductService} from "../../../services/productService/product.service";
 })
 export class MenComponent implements OnInit{
   products:Product[]=[];
+  search='';
   constructor(private productService: ProductService){}
   ngOnInit(): void {
     this.productService.getByCategoryMen()

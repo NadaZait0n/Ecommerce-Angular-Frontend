@@ -12,6 +12,7 @@ export class HomeComponent  implements OnInit{
   products:Product[]=[];
   base64:any='';
   form!:FormGroup;
+  search='';
   constructor(private productService: ProductService){}
   ngOnInit(): void {
     this.productService.get()
