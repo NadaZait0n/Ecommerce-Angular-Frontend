@@ -11,7 +11,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { ShowProductComponent } from './Product/show-product/show-product.component';
 import {MenComponent} from "./pages/category/men/men.component";
-import {WomenComponent} from "./pages/category/women/women.component";
+import {WomanComponent} from "./pages/category/woman/woman.component";
 import {CheckoutComponent} from "./pages/checkout/checkout.component";
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -27,8 +27,9 @@ const routes: Routes = [
   {path:'contact',component:ContactUsComponent},
   {path:'product',component:ShowProductComponent},
   {path:'cart',component:CartComponent},
+  {path:'checkout',component:CheckoutComponent},
   {path:'men',component:MenComponent},
-  {path:'women',component:WomenComponent},
+  {path:'woman',component:WomanComponent},
   {path:'',component:HomeComponent},
   {path:'**',component:NotFoundComponent}
 ];

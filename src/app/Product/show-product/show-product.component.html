@@ -58,17 +58,19 @@
     <thead>
 
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">Image</th>
       <th scope="col">Name</th>
       <th scope="col">Price</th>
+      <th scope="col">Description</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let item of products;let currentIndex=index">
-      <th scope="row">{{item.id }}</th>
-      <td>{{item.name }}</td>
-      <td>{{item.price}}</td>
-      <!--      <td>{{item.description }}</td>-->
+
+      <th><img src="{{item.image_url }}" width="55"></th>
+      <th>{{item.name }}</th>
+      <th>{{item.price}}</th>
+            <th>{{item.description |length:30}}</th>
       <td>
         <button type="button" class="btn btn-success" (click)="update(item)">Edit</button>
         <button type="button" class="btn btn-danger" (click)="delete(currentIndex)">Delete</button>

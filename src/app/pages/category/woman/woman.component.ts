@@ -1,16 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../../../models/product";
 import {FormGroup} from "@angular/forms";
 import {ProductService} from "../../../services/productService/product.service";
 
 @Component({
-  selector: 'app-women',
-  templateUrl: './women.component.html',
-  styleUrls: ['./women.component.css']
+  selector: 'app-woman',
+  templateUrl: './woman.component.html',
+  styleUrls: ['./woman.component.css']
 })
-export class WomenComponent implements OnInit{
+export class WomanComponent implements OnInit{
   products:Product[]=[];
-
+  search='';
   constructor(private productService: ProductService){}
   ngOnInit(): void {
     this.productService.getByCategoryWomen()
