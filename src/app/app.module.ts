@@ -16,7 +16,7 @@ import { ShowProductComponent } from './Product/show-product/show-product.compon
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MenComponent } from './pages/category/men/men.component';
 import { WomanComponent } from './pages/category/woman/woman.component';
 import { SearchPipe } from './pipes/search.pipe';
@@ -50,7 +50,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule, Ng2SearchPipeModule, ReactiveFormsModule
+    AppRoutingModule, Ng2SearchPipeModule, ReactiveFormsModule,FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
