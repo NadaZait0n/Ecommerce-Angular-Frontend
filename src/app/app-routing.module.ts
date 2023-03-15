@@ -7,7 +7,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+// import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { ShowProductComponent } from './Product/show-product/show-product.component';
 import {MenComponent} from "./pages/category/men/men.component";
@@ -32,7 +32,7 @@ const routes: Routes = [
   {path:'woman',component:WomanComponent},
 
   {path:'',component:HomeComponent},
-  {path:'**',component:NotFoundComponent}
+  // {path:'**',component:NotFoundComponent}
 
 ];
 
