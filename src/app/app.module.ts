@@ -7,18 +7,22 @@ import { HomeComponent } from './pages/home/home.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
-import {  CartComponent } from './pages/cart/cart.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ProductService } from './services/productService/product.service';
 import { ShowProductComponent } from './Product/show-product/show-product.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MenComponent } from './pages/category/men/men.component';
 import { WomenComponent } from './pages/category/women/women.component';
+import { FontAwesomeModule ,FaIconLibrary} from '@fortawesome/angular-fontawesome';
+import { faFilm } from '@fortawesome/free-solid-svg-icons';
+import { faXmark} from '@fortawesome/free-solid-svg-icons';
+import { CommonModule } from '@angular/common';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 
 
@@ -33,19 +37,27 @@ import { WomenComponent } from './pages/category/women/women.component';
     HeaderComponent,
     FooterComponent,
     ShowProductComponent,
-    NotFoundComponent,
     AboutUsComponent,
     ContactUsComponent,
-    CartComponent,
     MenComponent,
     WomenComponent,
+    OrdersComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,ReactiveFormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faFilm,faXmark);
+  }
+}

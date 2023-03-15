@@ -12,8 +12,12 @@ export class AdminComponent {
     const reader = new FileReader();
     reader.readAsDataURL (file);
     reader.onload = () => {
-       this.base64 = reader.result;
-       console.log(this.base64)
+      this.base64 = reader.result;
+      console.log(this.base64)
     };
   }
+
+  //Send data
+
+
 }
