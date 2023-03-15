@@ -16,10 +16,10 @@ import {CheckoutComponent} from "./pages/checkout/checkout.component";
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
 const routes: Routes = [
   {path:'checkout',component:CheckoutComponent},
   {path:'home',component:HomeComponent},
-  {path:'admin',component:AdminComponent},
   {path:'login',component:LoginComponent},
   {path:'details',component:DetailsComponent},
   {path:'register',component:RegistrationComponent},
@@ -30,8 +30,10 @@ const routes: Routes = [
   {path:'checkout',component:CheckoutComponent},
   {path:'men',component:MenComponent},
   {path:'woman',component:WomanComponent},
+
   {path:'',component:HomeComponent},
   {path:'**',component:NotFoundComponent}
+
 ];
 
 @NgModule({

@@ -46,6 +46,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     SearchPipe,
     LengthPipe,
     CheckoutComponent,
+
   ],
   imports: [
     BrowserModule,
