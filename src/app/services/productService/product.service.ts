@@ -13,10 +13,10 @@ export class ProductService {
 
   }
 
-   get () {
+  get () {
     return this.httpClient.get<Product[]>(`${environment.apiURL}`)
 
-   }
+  }
 
   getByID(id : number){
     return this.httpClient.get<Product[]>(`${environment.apiURL}/`+id)
