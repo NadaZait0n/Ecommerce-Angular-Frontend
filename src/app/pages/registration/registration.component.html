@@ -12,42 +12,42 @@
                         <form class="row" method="post">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="reg-fn">First Name</label>
-                                    <input class="form-control" type="text" id="reg-fn" required>
+                                    <label for="reg-fn">Full Name</label>
+                                    <input class="form-control"  #fullname type="text" id="reg-fn" required>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <!-- <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="reg-ln">Last Name</label>
                                     <input class="form-control" type="text" id="reg-ln" required>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="reg-email">E-mail Address</label>
-                                    <input class="form-control" type="email" id="reg-email" required>
+                                    <input class="form-control" #email type="email" id="reg-email" required>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <!-- <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="reg-phone">Phone Number</label>
                                     <input class="form-control" type="text" id="reg-phone" required>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="reg-pass">Password</label>
-                                    <input class="form-control" type="password" id="reg-pass" required>
+                                    <input class="form-control" #password type="password" id="reg-pass" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="reg-pass-confirm">Confirm Password</label>
-                                    <input class="form-control" type="password" id="reg-pass-confirm" required>
+                                    <label for="reg-pass-confirm">Gender</label>
+                                    <input class="form-control" #gender type="text" id="reg-pass-confirm" required>
                                 </div>
                             </div>
                             <div class="button">
-                                <button class="btn" type="submit">Register</button>
+                                <button class="btn"  (click)="signup(fullname.value, email.value,gender.value, password.value)" type="button">Register</button>
                             </div>
                             <p class="outer-link">Already have an account? <a href="login.html">Login Now</a>
                             </p>
