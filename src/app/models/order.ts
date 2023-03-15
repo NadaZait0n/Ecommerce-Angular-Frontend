@@ -8,4 +8,8 @@ export class Order{
     quantities:any
     total:any
     user:any
+    quantity:number=0;
+    name:any
+    address:any
+    phone:any
 }

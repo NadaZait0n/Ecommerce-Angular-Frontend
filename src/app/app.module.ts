@@ -26,7 +26,6 @@ import { WomanComponent } from './pages/category/woman/woman.component';
 import { SearchPipe } from './pipes/search.pipe';
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import { LengthPipe } from './pipes/length.pipe';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 
 
@@ -50,7 +49,6 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     WomanComponent,
     SearchPipe,
     LengthPipe,
-    CheckoutComponent,
 
   ],
   imports: [

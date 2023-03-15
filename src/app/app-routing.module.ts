@@ -10,14 +10,12 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { ShowProductComponent } from './Product/show-product/show-product.component';
 import {MenComponent} from "./pages/category/men/men.component";
 import {WomanComponent} from "./pages/category/woman/woman.component";
-import {CheckoutComponent} from "./pages/checkout/checkout.component";
 import { ReactiveFormsModule } from '@angular/forms';
 import { OrdersComponent } from './pages/orders/orders.component';
 
 
 
 const routes: Routes = [
-  {path:'checkout',component:CheckoutComponent},
   {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'details',component:DetailsComponent},
@@ -25,7 +23,6 @@ const routes: Routes = [
   {path:'aboutus',component:AboutUsComponent},
   {path:'contact',component:ContactUsComponent},
   {path:'product',component:ShowProductComponent},
-  {path:'checkout',component:CheckoutComponent},
   {path:'men',component:MenComponent},
   {path:'woman',component:WomanComponent},
   {path:'orders',component:OrdersComponent},

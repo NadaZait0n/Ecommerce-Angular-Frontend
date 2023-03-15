@@ -6,6 +6,4 @@ user:any
 success:any
 token:any
 message:any
-
-    
 }
