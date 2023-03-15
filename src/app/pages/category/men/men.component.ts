@@ -32,7 +32,7 @@ export class MenComponent implements OnInit{
   }
 
   addToCart(item:Product){
-    item.amount=this.amount;
+    // item.amount=this.amount;
     if("orders" in localStorage){
       this.cartProducts=JSON.parse(localStorage.getItem("orders")!);
       let exist=this.cartProducts.find(itemArr =>itemArr.id==item.id &&itemArr.category_id==item.category_id);
@@ -58,7 +58,7 @@ export class MenComponent implements OnInit{
     this.oneProduct.image_url=item.image_url;
     this.oneProduct.category_id=item.category_id;
     this.oneProduct.description=item.description;
-    this.oneProduct.amount=1;
+    // this.oneProduct.amount=1;
   }
 
   getInformationOfCart():Product{

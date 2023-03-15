@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Order } from 'src/app/models/order';
 import { Product } from 'src/app/models/product';
+import { Quantity } from 'src/app/models/quantity';
 
 @Component({
   selector: 'app-orders',
@@ -15,8 +17,9 @@ export class OrdersComponent  {
   phone:string="";
 
   deleteOneProducr:any;
+  order:Order=new Order();
 
-  cartProductsss:Product[]=[];
+  quantities:Quantity[]=[];
 
   ngOnInit(): void {
     this.getCardProducts();
@@ -24,46 +27,39 @@ export class OrdersComponent  {
 
   }
   getCardProducts(){
-    if("orders" in localStorage){
-      this.cartProductsss=JSON.parse(localStorage.getItem("orders")!);
+    if("quantites" in localStorage){
+      this.quantities=JSON.parse(localStorage.getItem("quantites")!);
     }
-    console.log(this.cartProductsss.length);
+    // console.log(this.cartProductsss.length);
     // let result = this.cartProducts.map(a => a.id);
-    // alert(result)
+
   }
 
-  plus(){
-    this.amount++;
-  }
-  mins(){
-    this.amount--;
-  }
   onSelected(value:number):void{
     this.amount=value;
+    this.totalAmount();
   }
 
   removeOrder(id:number):void{
-    if("orders" in localStorage){
-      this.cartProductsss=JSON.parse(localStorage.getItem("orders")!);
-      this.cartProductsss.forEach((value,index)=>{
-        if(value.id==id){
-          this.total-=value.price;
-          this.cartProductsss.splice(index,1);
+    if("quantites" in localStorage){
+      this.quantities=JSON.parse(localStorage.getItem("quantites")!);
+      this.quantities.forEach((value,index)=>{
+        if(value.product.id==id){
+          this.total-=value.product.price;
+          this.quantities.splice(index,1);
 
         }
     });
-      localStorage.setItem("orders",JSON.stringify( this.cartProductsss))
+      localStorage.setItem("quantites",JSON.stringify( this.quantities))
     }
     this.getCardProducts();
   }
 
+
   totalAmount():void{
-    this.cartProductsss.forEach((value)=>{
-      this.total+=value.price;
+    this.quantities.forEach((value)=>{
+      this.total+=value.product.price*value.quantity;
   });
-  }
-  featchAllData():void{
-    alert(this.name+" "+this.address+ " "+ this.phone);
   }
   addName(name:string):void{
     this.name=name;
@@ -74,6 +70,17 @@ export class OrdersComponent  {
   addPhone(phone:string):void{
     this.phone=phone;
   }
+
+  submit():void{
+    this.order.quantities=JSON.parse(localStorage.getItem("quantites")!);
+    this.order.address=this.address;
+    this.order.name=this.name;
+    this.order.phone=this.phone;
+    this.order.quantity=this.order.quantities.length;
+    this.order.total=this.total;
+  }
+
+
 }
 
 

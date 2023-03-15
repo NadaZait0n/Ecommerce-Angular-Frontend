@@ -7,8 +7,8 @@ export class Order{
     id : any
     quantities:any
     total:any
-    user:any
     quantity:number=0;
+    user:any
     name:any
     address:any
     phone:any

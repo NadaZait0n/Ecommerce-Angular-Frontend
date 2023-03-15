@@ -11,5 +11,5 @@ export class Product{
     description : any
     category_id :any
     image_url : any
-    amount:any
+    // amount:any
 }
