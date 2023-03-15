@@ -13,7 +13,6 @@ import {Router} from "@angular/router";
 })
 export class ShowProductComponent implements OnInit{
   products:Product[]=[];
-
   base64:any='';
   form!:FormGroup;
   constructor(private productService: ProductService,
@@ -32,6 +31,7 @@ export class ShowProductComponent implements OnInit{
       );
 
     this.form=this.build.group({
+        id: [''],
         name: ['',[Validators.required]],
         price: ['',[Validators.required]],
         size:['',Validators.required],
@@ -90,12 +90,14 @@ export class ShowProductComponent implements OnInit{
       );
   }
   update(item:any){
+    this.form.get('id')?.setValue(item.id)
     this.form.get('name')?.setValue(item.name)
     this.form.get('price')?.setValue(item.price)
     this.form.get('size')?.setValue(item.size)
     this.form.get('description')?.setValue(item.description)
     this.form.get('category_id')?.setValue(item.category_id)
     this.form.get('image_url')?.setValue(item.image_url)
+    // console.log(this.form)
   }
   getImagePath(event: any) {
     const file = event.target.files[0];

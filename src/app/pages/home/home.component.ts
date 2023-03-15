@@ -19,8 +19,10 @@ export class HomeComponent  implements OnInit{
   cartProducts:any[]=[];
   base64:any='';
   form!:FormGroup;
+
   enteredSearchValue: string = '';
   constructor(private productService: ProductService,private oneProduct:Product){}
+  search='';
   ngOnInit(): void {
     this.getCardProducts();
 

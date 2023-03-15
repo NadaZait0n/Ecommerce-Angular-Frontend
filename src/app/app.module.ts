@@ -16,12 +16,16 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MenComponent } from './pages/category/men/men.component';
-import { WomenComponent } from './pages/category/women/women.component';
+
 import { FontAwesomeModule ,FaIconLibrary} from '@fortawesome/angular-fontawesome';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { faXmark} from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { OrdersComponent } from './pages/orders/orders.component';
+import { WomanComponent } from './pages/category/woman/woman.component';
+import { SearchPipe } from './pipes/search.pipe';
+import {Ng2SearchPipeModule} from "ng2-search-filter";
+import { LengthPipe } from './pipes/length.pipe';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 
@@ -40,18 +44,20 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     AboutUsComponent,
     ContactUsComponent,
     MenComponent,
-    WomenComponent,
+
     OrdersComponent,
-    CheckoutComponent
+
+    WomanComponent,
+    SearchPipe,
+    LengthPipe,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
     FontAwesomeModule,
-    FormsModule,
-    CommonModule
+    CommonModule,
+    AppRoutingModule, Ng2SearchPipeModule, ReactiveFormsModule,FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
