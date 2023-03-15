@@ -75,3 +75,7 @@ export class OrdersComponent  {
     this.phone=phone;
   }
 }
+
+
+
+// this.cartProductsss=JSON.parse(localStorage.getItem("orders")!);

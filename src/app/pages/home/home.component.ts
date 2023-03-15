@@ -93,7 +93,6 @@ export class HomeComponent  implements OnInit{
   getInformationOfCart():Product{
     return this.oneProduct;
   }
-
   plus(){
     this.amount++;
   }
